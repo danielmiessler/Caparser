@@ -1,2 +1,3 @@
 # caparser
-A quick and dirty PCAP parser that helps you identify who your applications are sending sensitive data to without encryption.
+
+A quick and dirty PCAP parser created to assist network traffic analysis in IoT and Mobile security assessments, *caparse* shows you where your applications are sending cleartext sensitive data.
