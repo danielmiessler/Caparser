@@ -11,7 +11,7 @@ rm totalhits.txt
 #rm malwarecheck.txt
 
 # Get the hosts list
-tshark -r diphone.pcap -q -z conv,ip 2>/dev/null | grep "^[0-9]" | cut -d " " -f1 > hosts.txt 
+tshark -r diphone.pcap -q -z conv,ip | awk '{print $3}' | grep "^[0-9]" | sort | uniq | awk '{print $1}' >> hosts.txt
 
 # Create a seperate pcap for each host
 for host in `cat hosts.txt`
