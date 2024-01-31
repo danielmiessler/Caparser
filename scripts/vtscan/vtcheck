@@ -33,21 +33,23 @@ def parse_args
 		exit 0
 	end
 
-	if args.include? 'f'
+	case args.include?
+
+	when 'f'
 		@resource_url = @api_path['file']
-		@options['file'] = true	
-	end
-	if args.include? 'u' 
+		@options['file] = true
+
+	when 'u'
 		@resource_url = @api_path['url']
 		@options['url'] = true
-	end
-	if args.include? 'v'
-		@options['verbose'] = true
-	end
-	if args.include? 'p'
+	
+	when 'v'
+		@options['verbos'] = true
+			
+	when 'p'
 		@options['permalink'] = true
-	end
-	if args.include? '?'
+
+	when '?'
 		print_usage
 	end
 
